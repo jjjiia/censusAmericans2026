@@ -7,8 +7,10 @@ from atproto import Client
 
 CSV_FILE = "posts.csv"
 
-BLUESKY_HANDLE = "your-handle.bsky.social"
-BLUESKY_APP_PASSWORD = "your-app-password"
+import os
+
+BLUESKY_HANDLE = os.environ["BLUESKY_HANDLE"]
+BLUESKY_APP_PASSWORD = os.environ["BLUESKY_APP_PASSWORD"]
 
 STATUS_QUEUED = "queued"
 STATUS_POSTED = "posted"
