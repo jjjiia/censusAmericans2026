@@ -1,0 +1,36 @@
+name: Post to Bluesky
+
+on:
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install atproto
+
+      - name: Run bot
+        env:
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+        run: python post_bot.py
+
+      - name: Commit updated queue
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add posts.csv
+          git diff --cached --quiet || git commit -m "Update post queue"
+          git push
