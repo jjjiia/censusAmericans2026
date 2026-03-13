@@ -8,7 +8,7 @@ from collections import OrderedDict
 
 from atproto import Client, models
 
-CSV_FILE = "household_paragraphs.csv"
+CSV_FILE = "posts.csv"
 
 BLUESKY_HANDLE = os.environ["BLUESKY_HANDLE"]
 BLUESKY_APP_PASSWORD = os.environ["BLUESKY_APP_PASSWORD"]
