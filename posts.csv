@@ -1,19 +1,19 @@
-household_id,person_id,paragraph
-3800,3800_1,"I am a 64-year-old man living with my wife and 2 other people. I was born in 1960. My total personal income is $28,000, and my family income is $91,200. I usually drive to work, and my commute takes about 15 minutes."
-3800,3800_2,"I am his wife, I am 52 years old. I was born in 1972. My total personal income is $28,000, and my family income is $91,200. I usually drive to work, and my commute takes about 15 minutes."
-3800,3800_3,"I live in the same household, I am 47 years old. I was born in 1977. I am not in the labor force."
-3800,3800_4,"I live in the same household, I am 26. I was born in 1998. My total personal income is $35,200, and my family income is $91,200. I usually drive to work, and my commute takes about 15 minutes."
-3801,3801_1,"I am a 67-year-old woman living with my husband. I was born in 1957. I have a master's degree, and I studied nursing. I am not in the labor force. My total personal income is $19,700, my family income is $134,000, and $12,000 of my income comes from Social Security."
-3801,3801_2,"I am her husband, I am 74 years old. I was born in 1950. I have a doctoral degree, and I studied linguistics and comparative language and literature. I am not in the labor force. My total personal income is $114,300, my family income is $134,000, and $44,800 of my income comes from Social Security."
-3802,3802_1,"I am a 75-year-old woman living with my husband. I was born in 1949. I am not in the labor force. My total personal income is $11,200, my family income is $33,300, and $1,600 of my income comes from Social Security."
-3802,3802_2,"I am her husband, I am 72 years old. I was born in 1952. I am not in the labor force. My total personal income is $22,100, my family income is $33,300, and $11,000 of my income comes from Social Security. I am a veteran."
-3803,3803_1,"I am a 64-year-old man living with my wife and my adult son. I was born in 1960. I have a bachelor's degree, and I studied criminal justice and fire protection. My total personal income is $178,000, and my family income is $207,100. I usually drive to work, and my commute takes about 30 minutes."
-3803,3803_2,"I am his wife, I am 62 years old. I was born in 1962. I am not in the labor force."
-3803,3803_3,"I am their son, I am 34 years old. I was born in 1990. My total personal income is $29,100, and my family income is $207,100. I usually drive to work, and my commute takes about 20 minutes."
-3804,3804_1,"I am a 36-year-old man living with my wife and my 5 children. I was born in 1988. My total personal income is $115,600, and my family income is $195,600. I usually drive to work, and my commute takes about 15 minutes. I am a veteran."
-3804,3804_2,"I am his wife, I am 34 years old. I was born in 1990. My total personal income is $80,000, and my family income is $195,600. I usually drive to work, and my commute takes about 20 minutes."
-3804,3804_3,"I am their daughter, I am 15. I was born in 2009. I attend public school and I am currently in grade 9."
-3804,3804_4,"I am their son, I am 14. I was born in 2010."
-3804,3804_5,"I am their son, I am 10. I was born in 2014. I attend public school and I am currently in grade 5."
-3804,3804_6,"I am their daughter, I am 10. I was born in 2014. I attend public school and I am currently in grade 4."
-3804,3804_7,"I am their son, I am 7. I was born in 2017. I attend public school and I am currently in kindergarten."
+household_id,person_id,paragraph,status,posted_at,error,uri,cid
+3800,3800_1,"I am a 64-year-old man living with my wife and 2 other people. I was born in 1960. My total personal income is $28,000, and my family income is $91,200. I usually drive to work, and my commute takes about 15 minutes.",posted,2026-03-13T14:11:46+00:00,,at://did:plc:kjxtmrzpyp2sdsgkabuzijyr/app.bsky.feed.post/3mgx3tklfyt2i,bafyreig5odydf2kvlletl2l3zph2lnksnr5w5cg6fm55pnkeqlqnblwtr4
+3800,3800_2,"I am his wife, I am 52 years old. I was born in 1972. My total personal income is $28,000, and my family income is $91,200. I usually drive to work, and my commute takes about 15 minutes.",posted,2026-03-13T14:11:46+00:00,,at://did:plc:kjxtmrzpyp2sdsgkabuzijyr/app.bsky.feed.post/3mgx3tkmz2o2m,bafyreigoq3kbcjxg344sjsjms3b2ah5rputdw4g6b7c2fkydiucevcpu6y
+3800,3800_3,"I live in the same household, I am 47 years old. I was born in 1977. I am not in the labor force.",posted,2026-03-13T14:11:46+00:00,,at://did:plc:kjxtmrzpyp2sdsgkabuzijyr/app.bsky.feed.post/3mgx3tkowli2x,bafyreih4xgf6zj52yh25k6fiej24scgsyzr5hcehkltjc6o2fkwjwod4rq
+3800,3800_4,"I live in the same household, I am 26. I was born in 1998. My total personal income is $35,200, and my family income is $91,200. I usually drive to work, and my commute takes about 15 minutes.",posted,2026-03-13T14:11:46+00:00,,at://did:plc:kjxtmrzpyp2sdsgkabuzijyr/app.bsky.feed.post/3mgx3tkqgxu2q,bafyreiflr35dceuw5zcost66qyeomzhjomo4gpemmh5ifygz4tyoi77kli
+3801,3801_1,"I am a 67-year-old woman living with my husband. I was born in 1957. I have a master's degree, and I studied nursing. I am not in the labor force. My total personal income is $19,700, my family income is $134,000, and $12,000 of my income comes from Social Security.",,,,,
+3801,3801_2,"I am her husband, I am 74 years old. I was born in 1950. I have a doctoral degree, and I studied linguistics and comparative language and literature. I am not in the labor force. My total personal income is $114,300, my family income is $134,000, and $44,800 of my income comes from Social Security.",,,,,
+3802,3802_1,"I am a 75-year-old woman living with my husband. I was born in 1949. I am not in the labor force. My total personal income is $11,200, my family income is $33,300, and $1,600 of my income comes from Social Security.",,,,,
+3802,3802_2,"I am her husband, I am 72 years old. I was born in 1952. I am not in the labor force. My total personal income is $22,100, my family income is $33,300, and $11,000 of my income comes from Social Security. I am a veteran.",,,,,
+3803,3803_1,"I am a 64-year-old man living with my wife and my adult son. I was born in 1960. I have a bachelor's degree, and I studied criminal justice and fire protection. My total personal income is $178,000, and my family income is $207,100. I usually drive to work, and my commute takes about 30 minutes.",,,,,
+3803,3803_2,"I am his wife, I am 62 years old. I was born in 1962. I am not in the labor force.",,,,,
+3803,3803_3,"I am their son, I am 34 years old. I was born in 1990. My total personal income is $29,100, and my family income is $207,100. I usually drive to work, and my commute takes about 20 minutes.",,,,,
+3804,3804_1,"I am a 36-year-old man living with my wife and my 5 children. I was born in 1988. My total personal income is $115,600, and my family income is $195,600. I usually drive to work, and my commute takes about 15 minutes. I am a veteran.",,,,,
+3804,3804_2,"I am his wife, I am 34 years old. I was born in 1990. My total personal income is $80,000, and my family income is $195,600. I usually drive to work, and my commute takes about 20 minutes.",,,,,
+3804,3804_3,"I am their daughter, I am 15. I was born in 2009. I attend public school and I am currently in grade 9.",,,,,
+3804,3804_4,"I am their son, I am 14. I was born in 2010.",,,,,
+3804,3804_5,"I am their son, I am 10. I was born in 2014. I attend public school and I am currently in grade 5.",,,,,
+3804,3804_6,"I am their daughter, I am 10. I was born in 2014. I attend public school and I am currently in grade 4.",,,,,
+3804,3804_7,"I am their son, I am 7. I was born in 2017. I attend public school and I am currently in kindergarten.",,,,,
