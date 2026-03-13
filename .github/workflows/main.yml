@@ -1,6 +1,8 @@
-name: Post to Bluesky
+name: Post household thread to Bluesky
 
 on:
+  schedule:
+    - cron: "30 * * * *"
   workflow_dispatch:
 
 jobs:
@@ -21,16 +23,16 @@ jobs:
       - name: Install dependencies
         run: pip install atproto
 
-      - name: Run bot
+      - name: Run household thread bot
         env:
           BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
-        run: python post_bot.py
+        run: python post_household_thread.py
 
       - name: Commit updated queue
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add posts.csv
-          git diff --cached --quiet || git commit -m "Update post queue"
+          git add household_paragraphs.csv
+          git diff --cached --quiet || git commit -m "Update household posting queue"
           git push
