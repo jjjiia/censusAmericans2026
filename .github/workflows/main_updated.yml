@@ -1,4 +1,4 @@
-name: Post household thread to Bluesky
+name: Post household thread to Bluesky NEW
 
 on:
   schedule:
