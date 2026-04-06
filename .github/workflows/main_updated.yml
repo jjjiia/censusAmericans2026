@@ -2,7 +2,7 @@ name: Post household thread to Bluesky NEW
 
 on:
   schedule:
-    - cron: "50 * * * *"
+    - cron: "55 * * * *"
   workflow_dispatch:
 
 env:
@@ -31,7 +31,7 @@ jobs:
           CSV_FILE: ${{ env.CSV_FILE }}
           BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
-        run: python post_household_thread.py
+        run: python post_household_thread_updated.py
 
       - name: Commit updated queue
         run: |
