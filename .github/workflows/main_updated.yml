@@ -2,7 +2,7 @@ name: Post household thread to Bluesky NEW
 
 on:
   schedule:
-    - cron: "40 * * * *"
+    - cron: "50 * * * *"
   workflow_dispatch:
 
 env:
