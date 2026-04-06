@@ -9,7 +9,6 @@ from typing import List
 
 from atproto import Client, models
 
-# Set this in GitHub Actions env if your file has a different name.
 CSV_FILE = os.environ.get("CSV_FILE", "posts_04062026.csv")
 
 BLUESKY_HANDLE = os.environ["BLUESKY_HANDLE"]
@@ -19,7 +18,6 @@ STATUS_QUEUED = "queued"
 STATUS_POSTED = "posted"
 STATUS_ERROR = "error"
 
-# Bluesky posts are effectively limited to 300 characters.
 POST_CHAR_LIMIT = 300
 
 
@@ -33,22 +31,16 @@ def norm_status(value: str) -> str:
 
 def clean_text(value: str) -> str:
     text = (value or "").replace("\r\n", "\n").replace("\r", "\n").strip()
-    # collapse excessive blank lines
     while "\n\n\n" in text:
         text = text.replace("\n\n\n", "\n\n")
     return text
 
 
 def grapheme_safe_len(text: str) -> int:
-    # Approximation that is safer than raw bytes; good enough for queue splitting.
     return len(unicodedata.normalize("NFC", text))
 
 
 def split_text(text: str, limit: int = POST_CHAR_LIMIT) -> List[str]:
-    """
-    Split a long text into chunks that fit within a Bluesky post.
-    Prefers paragraph/sentence/word boundaries.
-    """
     text = clean_text(text)
     if not text:
         return []
@@ -65,8 +57,6 @@ def split_text(text: str, limit: int = POST_CHAR_LIMIT) -> List[str]:
             break
 
         cut = -1
-
-        # Prefer double newline, newline, sentence break, then space.
         breakpoints = ["\n\n", "\n", ". ", "! ", "? ", "; ", ", ", " "]
         for bp in breakpoints:
             idx = remaining.rfind(bp, 0, limit + 1)
@@ -95,13 +85,28 @@ def make_reply_ref(root_uri: str, root_cid: str, parent_uri: str, parent_cid: st
     )
 
 
+def normalize_row_keys(row: dict) -> dict:
+    cleaned = {}
+    for k, v in row.items():
+        if k is None:
+            continue
+        nk = str(k).replace("\ufeff", "").strip()
+        cleaned[nk] = v
+    return cleaned
+
+
 def load_rows(path: str):
-    with open(path, "r", encoding="utf-8", newline="") as f:
+    # FIX: handles BOM / Excel issue on SERIAL column
+    with open(path, "r", encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
-        fieldnames = reader.fieldnames
-        if not fieldnames:
+
+        raw_fieldnames = reader.fieldnames
+        if not raw_fieldnames:
             raise ValueError("CSV is missing headers.")
-        rows = list(reader)
+
+        fieldnames = [str(h).replace("\ufeff", "").strip() for h in raw_fieldnames]
+        rows = [normalize_row_keys(row) for row in reader]
+
     return fieldnames, rows
 
 
@@ -171,7 +176,12 @@ def main():
         save_rows(CSV_FILE, fieldnames, rows)
         return
 
+    # DEBUG (shows in GitHub Actions logs)
+    print("Available headers:", fieldnames)
+    print("Posting SERIAL:", row.get("SERIAL", ""))
+
     posts = build_thread_posts(row)
+
     if not posts:
         row["status"] = STATUS_ERROR
         row["error"] = "Row had no postable content."
